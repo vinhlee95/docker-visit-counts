@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  # first container
+  redis-server:
+    image: 'redis'
+
+  # second container
+  node-app:
+    build: . # make it use the Dockerfile in current dir
+    ports:
+      - "8080:8080" # port mapping
